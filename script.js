@@ -1,133 +1,46 @@
-/*
-while loop runs from i=0 to i=number adding i to sum on each iteration while increasing i by one.
-*/
-
-function sumOfFirstnNumbers(number){
-    let sum = 0;
-    let i = 0;
-
-    while(i <= number){
-        sum = sum + i;
-        i++;
-    }
-
-    console.log('The sum of first', number, 'numbers is', sum);
-}
 
 /*
-while loop iterates from i=1 to i=10 and prints number*i while increasing i by 1 on each iteration.
+    Named function is used to find the maximum number in the array by iterating over the whole array
+    and updating the max value if the current number is larger than the max value.
 */
-function tableOfNumber(number){
-    let i = 1;
-    console.log('The table of', number, ':');
-
-    while(i <= 10){
-        console.log(number * i);
-        i++;
-    }
-}
-
-/*
-a boolean variable prime is set to true and a for loop is run from i=2 to i<number while checking if at any point 
-i divides number then prime is set to false and loop is break and after the loop based on the boolean value of
-prime the function prints yes or no.
-*/
-
-function isPrime(number){
-    let prime = true;
-
-    if(number <= 1){
-        prime = false;
-    }
-
-    for(let i = 2; i < number; i++){
-        if(number % i === 0){
-            prime = false;
-            break;
+function maximumNumberInArray(array){
+    let max = array[0];
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] > max) {
+            max = array[i];
         }
     }
-
-    if(prime){
-        console.log('is it a prime number: Yes');
-    } else {
-        console.log('is it a prime number: No');
-    }
+    return max;
 }
 
-/* 
-for loop iterates from i=1 to i=number while checking iff number is divisible by i 
-if yes then print the value of i otherwise just move to the next iteration.
+/*
+    anonymous function is used to find sum of all the eleents in the array by iterating over the whole array
+    updating the sum value by adding the current element value to it. 
 */
+let sumOfAllElementsInArray = function (array){
+    let sum = 0;
+    for(let i =0; i<array.length; i++){
+        sum = array[i]+sum;
+    }
+    return sum;
+}
 
-function printFactors(number){
-    console.log('The factors :');
-
-    for(let i = 1; i <= number; i++){
-        if(number % i === 0){
-            console.log(i);
+/*
+    arrow function is used to find the number of odd functions in an array by iterating over the whole array
+    and finding the modulo 2 of each element and updating the count variable accordingly.
+*/
+let numberOfOddNumbersInArray = (array)=>{
+    let count = 0;
+    for(let i=0; i<array.length; i++){
+        if(array[i]%2!=0){
+            count++;
         }
     }
+    return count;
 }
 
-/*
-a temp variable is created which stores the value as number and a while loop is run until temp >0
-on each iteration the last digit is added to the sum and temp is updated by dividing from 10.
-*/
-
-function sumOfDigits(number){
-    let sum = 0;
-    let temp = number;
-
-    while(temp > 0){
-        sum = sum + temp % 10;
-        temp = Math.floor(temp / 10);
-    }
-
-    console.log('The sum of digits:', sum);
-}
-
-/*
-a temp variable is created which is equal to the number and a while loop is run on each iteration the 
-last digit's cube is added to the sum once the loop ends the sum is compared to the number if equals then
-prind true otherwise false.
-*/
-
-function isArmstrong(number){
-    let sum = 0;
-    let temp = number;
-
-    while(temp > 0){
-        let digit = temp % 10;
-        sum = sum + digit * digit * digit;
-        temp = Math.floor(temp / 10);
-    }
-
-    if(sum === number){
-        console.log('is it an armstrong number? : yes');
-    } else {
-        console.log('is it an armstrong number? : no');
-    }
-}
-
-
-/*
-a function that performs other function call at once just to ease the process.
-*/
-function performAllOperations(number){
-    console.log('Number:', number);
-
-    sumOfFirstnNumbers(number);
-    tableOfNumber(number);
-    isPrime(number);
-    printFactors(number);
-    sumOfDigits(number);
-    isArmstrong(number);
-}
-
-let variable1 = 10;
-let variable2 = 15;
-let variable3 = 20;
-
-performAllOperations(variable1);
-performAllOperations(variable2);
-performAllOperations(variable3);
+let exampleArray = [1,2,3,4,5,6,7,8,9,10,-1,230,99,-1002];
+console.log("Example Array:-", exampleArray);
+console.log("Maximum number:" + maximumNumberInArray(exampleArray));
+console.log("Sum of all elements:" + sumOfAllElementsInArray(exampleArray));
+console.log("Number of odd numbers:",numberOfOddNumbersInArray(exampleArray));

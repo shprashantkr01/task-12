@@ -1,0 +1,65 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+#header{
+    width: 100vw;
+    height: 15vh;
+    background-color:antiquewhite;
+}
+#navbar{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight:700;
+}
+.hero{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100vw;
+    height: 40vh;
+}
+.boxes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    width: 100px;
+    height: 100px;
+    box-shadow: 1px 1px 0px rgb(138, 138, 138);
+}
+.boxes:hover{
+    cursor: pointer;
+}
+.search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+}
+.search>form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    gap: 5px;
+}
+.search>form>input{
+    width: 30%;
+    height: 80%;
+    padding: 1rem;
+}
+#greetButton{
+    width: 10%;
+    height: 80%;
+}
+#greetButton:hover{
+    cursor:pointer;
+}

@@ -1,34 +1,37 @@
 
-const division = (numerator, denominator)=>{
-    return new Promise((resolve, reject)=>{
-        if(denominator===0){
-            reject("Division by zero not allowed");
-        }else{
-            resolve(numerator/denominator);
-        }
-    })
-}
-
-division(10,0).then((result)=>{
-    console.log("RESULT :",result);
-}).catch(error=>{
-    console.log("ERROR :",error);
+const navbarPara = document.getElementById('navbarPara');
+const Input = document.getElementById('searchBox');
+const button = document.getElementById('greetButton');
+/* 
+click event listener is added to the button which updates the paragraph text by adding the input
+value to it.
+*/
+button.addEventListener('click',(event)=>{
+    event.preventDefault(); 
+    let name = Input.value;
+    navbarPara.textContent+=','+' ' +name;
+    console.log(name);
 })
-
-division(23,127).then(result=>{
-    console.log("RESULT :",result);
-}).catch(error=>{
-    console.log("ERROR :",error);
+const redBox = document.getElementById('box1');
+const blueBox = document.getElementById('box2');
+const greenBox = document.getElementById('box3');
+const yellowBox = document.getElementById('box4');
+/*
+click event listener is added which updates the background color of the boxes.
+*/
+redBox.addEventListener('click', (event)=>{
+    event.preventDefault();
+    redBox.style.backgroundColor = 'red';
 })
-
-division(-279,87).then(result=>{
-    console.log("RESULT :",result);
-}).catch(error=>{
-    console.log("ERROR :",error);
+blueBox.addEventListener('click', (event)=>{
+    event.preventDefault();
+    blueBox.style.backgroundColor = 'blue';
 })
-
-division(-125,-5).then(result=>{
-    console.log("RESULT :",result);
-}).catch(error=>{
-    console.log("ERROR :",error);
+greenBox.addEventListener('click', (event)=>{
+    event.preventDefault();
+    greenBox.style.backgroundColor = 'green';
+})
+yellowBox.addEventListener('click', (event)=>{
+    event.preventDefault();
+    yellowBox.style.backgroundColor = 'yellow';
 })
